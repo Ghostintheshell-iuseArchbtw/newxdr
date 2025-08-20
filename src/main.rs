@@ -1,9 +1,7 @@
-unsafe extern "C" {
-    fn kernel_driver_hello();
-}
+mod driver;
 
 fn main() {
-    unsafe {
-        kernel_driver_hello();
-    }
+    driver::hello();
+    let result = driver::add(2, 3);
+    println!("Result from kernel driver: {}", result);
 }
